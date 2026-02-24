@@ -1,0 +1,1 @@
+Prostuduj soubor Student_podmínky.md a zkontroluj zda můj projekt ve složce snake_game tyto podmínky splňuje
