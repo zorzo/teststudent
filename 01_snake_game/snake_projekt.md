@@ -1,6 +1,8 @@
-# Dokumentace ke hře Snake (snake_game/snake10_2.py)
+# Název projektu
 
-## O projektu
+Hra Snake
+
+## Popis a cíl projektu
 Tento projekt je fází vývoje hry Snake (Had) pomocí knihovny **Pygame** v jazyce Python.
 V této fázi (`snake10_2.py`) je implementováno herní okno, vykreslení hada (jako jeden čtverec) a jídla na náhodných pozicích.
 
@@ -14,6 +16,8 @@ Instalace knihovny Pygame pomocí pip:
 ```bash
 pip install pygame
 ```
+
+## Funkcionalita programu
 
 ## Popis kódu
 
