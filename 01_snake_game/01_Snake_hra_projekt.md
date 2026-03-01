@@ -1,7 +1,7 @@
 # Hra Snake
 
 ## Popis a cíl projektu
-Cílem tohoto projektu je vytvořit klasickou hru "Had" (Snake) v jazyce Python s využitím knihovny **Pygame**. Hra je vyvíjena postupně v několika fázích. Aktuální fáze (`snake10_5.py`) doplňuje plnou logiku hry – kromě ovládání pohybu přidává generování potravy a zvětšování hada při pojídání.
+Cílem tohoto projektu je vytvořit klasickou hru "Had" (Snake) v jazyce Python s využitím knihovny **Pygame**. Hra je vyvíjena postupně v několika fázích. Aktuální verze (`snake10_6.py`) kompletně implementuje plnou logiku hry – zahrnuje ovládání pohybu, generování potravy, zvětšování hada při pojídání, a také detekci kolizí (s hranami okna a se sebou samým).
 Aplikace je určena pro začínající programátory jako ukázka práce s grafikou, událostmi a časováním v herním enginu.
 
 ## Funkcionalita programu
@@ -13,6 +13,8 @@ Program se skládá z následujících technických prvků:
     - Pohyb je řešen pomocí vektoru `snake_dir`, který se mění na základě stisku kláves (šipky).
     - Aby se had nepohyboval příliš rychle (při každém průchodu smyčkou), je implementován časovač (`pg.time.get_ticks()`). Had se pohne pouze po uplynutí intervalu `time_step` (250 ms).
     - Zvětšování a udržování délky se opírá o ořezávání listu z jeho konce – přidá se nová hlava dopředu a pokud had nic nesnědl, odebere se konec. Délka stoupá po kolizi s jídlem.
+    - **Kolize s okrajem**: Pokud hlava hada překročí hranice herního okna, dojde k resetu (délka se vrátí na 1 a pozice se znovu vygeneruje).
+    - **Kolize se sebou samým**: Pokud hlava hada narazí do jakéhokoliv vlastního segmentu (článku těla), hra se ukončí.
 4.  **Generování pozic**: Využívá knihovnu `random` a anonymní `lambda` funkci pro umístění objektů do mřížky odpovídající velikosti políček (`TILE_SIZE`).
 
 ### Technická část
@@ -32,4 +34,4 @@ Smyčka v každém kroku:
 ### Instalace a spuštění
 1.  Ujistěte se, že máte nainstalovaný Python 3.
 2.  Nainstalujte knihovnu Pygame: `pip install pygame`.
-3.  Spusťte finální skript: `python 01_snake_game/snake10_5.py`.
+3.  Spusťte finální skript: `python 01_snake_game/snake10_6.py`.
