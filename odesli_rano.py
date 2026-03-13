@@ -1,0 +1,52 @@
+import time
+import datetime
+import subprocess
+import sys
+
+# Nastavení cílového data a času (13. března 2026, 9:00:00)
+cilovy_cas = datetime.datetime(2026, 3, 13, 9, 0, 0)
+
+def proved_git_tydenni_update():
+    print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Spouštím odesílání na GitHub...")
+    
+    try:
+        # Přidání všech změněných souborů do stage
+        subprocess.run(["git", "add", "."], check=True)
+        
+        # Vytvoření commitu. Zpráva by měla odpovídat pravidlům pro AI hodnocení (např. trpný/minulý čas)
+        zprava_commitu = "Přidán skript kostka_faze_1_zaklad.py (algoritmus pro vykreslení 2D kostky a jejích aktuálních souřadnic) a vytvořena příslušná projektová dokumentace."
+        subprocess.run(["git", "commit", "-m", zprava_commitu], check=True)
+        
+        # Odeslání (push) na vzdálený server
+        subprocess.run(["git", "push"], check=True)
+        print("✅ Hotovo! Kód byl úspěšně odeslán na GitHub.")
+        
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Nastala chyba při odesílání na GitHub: {e}")
+
+def main():
+    nyni = datetime.datetime.now()
+    
+    if nyni >= cilovy_cas:
+        print("Cílový čas už vypršel! Odesílám okamžitě...")
+        proved_git_tydenni_update()
+        sys.exit()
+    
+    # Výpočet, kolik sekund zbývá do cílového času
+    zbyva_sekund = (cilovy_cas - nyni).total_seconds()
+    
+    hodiny, zbytek = divmod(zbyva_sekund, 3600)
+    minuty, sekundy = divmod(zbytek, 60)
+    
+    print(f"Automatické odeslání je nastaveno na: {cilovy_cas.strftime('%d.%m.%Y %H:%M:%S')}")
+    print(f"Skript nyní bude čekat: {int(hodiny)} hodin, {int(minuty)} minut a {int(sekundy)} sekund.")
+    print("NEZAVÍREJTE TOTO OKNO! ☕")
+    
+    # Uspání programu do zadaného času
+    time.sleep(zbyva_sekund)
+    
+    # Spuštění odesílací funkce
+    proved_git_tydenni_update()
+
+if __name__ == "__main__":
+    main()
