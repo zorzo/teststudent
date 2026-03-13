@@ -4,7 +4,7 @@ import subprocess
 import sys
 
 # Nastavení cílového data a času (13. března 2026, 9:00:00)
-cilovy_cas = datetime.datetime(2026, 3, 13, 9, 0, 0)
+cilovy_cas = datetime.datetime(2026, 3, 13, 21, 15, 0)
 
 def proved_git_tydenni_update():
     print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Spouštím odesílání na GitHub...")
@@ -14,7 +14,7 @@ def proved_git_tydenni_update():
         subprocess.run(["git", "add", "."], check=True)
         
         # Vytvoření commitu. Zpráva by měla odpovídat pravidlům pro AI hodnocení (např. trpný/minulý čas)
-        zprava_commitu = "Přidán skript kostka_faze_1_zaklad.py (algoritmus pro vykreslení 2D kostky a jejích aktuálních souřadnic) a vytvořena příslušná projektová dokumentace."
+        zprava_commitu = "Přidán skript kostka_faze_2_pohyb.py s náhodným pohybem a odrazem. Aktualizována projektová dokumentace."
         subprocess.run(["git", "commit", "-m", zprava_commitu], check=True)
         
         # Odeslání (push) na vzdálený server
