@@ -9,3 +9,8 @@ Jednoduchá implementace klasické hry Snake (Had) v Pythonu s využitím knihov
 
 Stručný popis:
 Animace náhodně se pohybující kostky v souřadnicovém systému. Skript bude zároveň zobrazovat aktuální souřadnice kostky. V další fázi bude kostka postupně měnit náhodně barvu, pulsovat a náraz kostky bude generovat další kostky, jež do jedné sekundy zmizí.
+
+3, HW Inventura, 16.03.2026
+
+Stručný popis:
+Python skript pro detekci HW (hardwaru) v počítači. Postupně získat co nejvíce informací, například: Značka/Typ procesoru, RAM, GPU, apod.
