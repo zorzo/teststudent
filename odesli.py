@@ -3,7 +3,7 @@ import datetime
 import subprocess
 import sys
 
-# Nastavení cílového data a času (13. března 2026, 9:00:00)
+# Nastavení cílového data a času 
 cilovy_cas = datetime.datetime(2026, 3, 17, 23, 41, 0)
 
 def proved_git_tydenni_update():
