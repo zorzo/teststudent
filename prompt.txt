@@ -1,3 +1,7 @@
 Prostuduj soubor Student_podmínky.md a zkontroluj zda můj projekt ve složce snake_game tyto podmínky splňuje
 
 git log --oneline --date=relative -n 5
+
+
+
+Prostuduj soubor Student_podmínky.md a zkontroluj zda skript hw_inventura_06_wmi_ram_disky.py tyto podmínky splňuje. Aktualizuj dokumentaci.
