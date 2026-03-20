@@ -3,8 +3,8 @@ import datetime
 import subprocess
 import sys
 
-# Nastavení cílového data a času 
-cilovy_cas = datetime.datetime(2026, 3, 19, 8, 55, 0)
+# Nastavení cílového data a času (pravidlo min. 12 hodin mezi commity - nastaveno na dnešní večer)
+cilovy_cas = datetime.datetime(2026, 3, 20, 21, 00, 0)
 
 def proved_git_tydenni_update():
     print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Spouštím odesílání na GitHub...")
@@ -14,7 +14,7 @@ def proved_git_tydenni_update():
         subprocess.run(["git", "add", "."], check=True)
         
         # Vytvoření commitu. Zpráva by měla odpovídat pravidlům pro AI hodnocení (např. trpný/minulý čas)
-        zprava_commitu = "Přidána fáze 6 HW Inventury: detaily RAM a disků přes WMI"
+        zprava_commitu = "Přidána fáze 7 HW Inventury: sítě a USB přes WMI"
 
         subprocess.run(["git", "commit", "-m", zprava_commitu], check=True)
         

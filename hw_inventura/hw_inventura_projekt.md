@@ -11,6 +11,7 @@ Program je tvořen skripty v jazyce Python, které postupně po fázích přistu
 - **Fáze 4 (`hw_inventura_04_gpu_chyby.py`):** Slouží k detekci dedikovaných grafických karet (primárně NVIDIA) a zobrazuje jejich celkovou VRAM paměť a aktuální teplotu. Celý proces je ošetřen pro případ selhání načítání dat.
 - **Fáze 5 (`hw_inventura_05_kompletni_json.py`):** Představuje komplexní inventuru (s ohledem na operační systém Windows) a umožňuje hromadný export nasbíraných dat do formátu JSON (datového slovníku). Namísto prostého výpisu do konzole se data ukládají do souboru `hw_report.json` pro další případné zpracování.
 - **Fáze 6 (`hw_inventura_06_wmi_ram_disky.py`):** Zaměřuje se na detailní průzkum operační paměti a pevných disků v OS Windows. S pomocí rozhraní WMI získává fyzické rozložení RAM modulů (jejich kapacitu, frekvenci i výrobce) a detaily o fyzických discích (včetně typu rozhraní).
+- **Fáze 7 (`hw_inventura_07_wmi_site_usb.py`):** Pomocí WMI zkoumá aktivní síťové adaptéry (jejich MAC a IP adresy) a vypisuje seznam připojených USB řadičů, což slouží jako základ pro hlubší detekci periferií a síťové konektivity počítače.
 
 ## Technická část
 - **Jazyk:** Python
